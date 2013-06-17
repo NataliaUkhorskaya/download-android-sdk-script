@@ -10,7 +10,7 @@
         <mkdir dir="${android.sdk.dir}"/>
         <mkdir dir="${android.sdk.dir}/platforms"/>
 
-        <get src="http://dl-ssl.google.com/android/repository/android-16_r03.zip"
+        <get src="http://dl-ssl.google.com/android/repository/android-${android.target}_r04.zip"
              dest="${download.dir}/android.zip" usetimestamp="true"/>
 
         <unzip src="${download.dir}/android.zip" dest="${android.sdk.dir}/platforms"/>
@@ -18,11 +18,12 @@
         <move file="${android.sdk.dir}/platforms/android-4.1.2" tofile="${android.sdk.dir}/platforms/android-${android.target}"/>
         <delete dir="${android.sdk.dir}/platforms/android-4.1.2"/>
 
-        <get src="http://dl-ssl.google.com/android/repository/platform-tools_r11-windows.zip"
+        <get src="http://dl-ssl.google.com/android/repository/platform-tools_r${android.target}-windows.zip"
              dest="${download.dir}/platform-tools.zip" usetimestamp="true"/>
 
         <unzip src="${download.dir}/platform-tools.zip" dest="${android.sdk.dir}"/>
 
+        <!-- TeamCity expect r19 or higher -->
         <get src="http://dl.google.com/android/repository/tools_r19-windows.zip"
              dest="${download.dir}/tools.zip" usetimestamp="true"/>
 
